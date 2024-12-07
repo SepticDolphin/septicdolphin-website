@@ -25,11 +25,11 @@ to {
 
 
 @keyframes skymove {
-    from {
+    0% {
         background-position-x: 0;
     }
-    to {
-        background-position-x: calc(100vw);
+    100% {
+        background-position-x: -150vw;
     }
 }
 
@@ -93,11 +93,11 @@ to {
     width: calc(2.5vh + 2.5vw);   
     height: calc(2.5vh + 2.5vw);
     padding: 0;
-    filter: blur(.6px) brightness(0)
+    filter: blur(.6px) brightness(0);
 }
 
 .iconcolumn:active {
-    filter: brightness(100)
+    filter: blur(.6px) brightness(100);
 }
 
 
@@ -142,7 +142,7 @@ to {
     position: absolute;
     align-self: center;
     width: max(calc(105vh + 105vw), 900px);
-    z-index: -5;
+    z-index: -2;
 
     overflow: hidden;
 
@@ -153,6 +153,10 @@ to {
     image-rendering: crisp-edges;
 
     filter: blur(.6px);
+
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
 }
 
 .sunbackground2{
@@ -160,7 +164,7 @@ to {
     position: absolute;
     align-self: center;
     width: max(calc(70vh + 70vw), 600px);
-    z-index: -5;
+    z-index: -2;
 
     overflow: hidden;
 
@@ -169,6 +173,10 @@ to {
     image-rendering: crisp-edges;
 
     filter: blur(.6px);
+
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
 }
 
 
@@ -226,19 +234,19 @@ to {
 
 
 body {
-    background-image: url(BackgroundOverlay.png), url(BGR2.png);
-    background-position: absolute, absolute;
-    background-position: center bottom, center bottom;
-    background-size: cover, cover;
-    background-repeat: repeat, repeat;
-    height: 100vh;
-    width: 100%;
+    background-image: url(BGR2.png);
+    background-size: 150vw auto;
+    background-repeat: repeat;
+    
     margin: 0;
-    margin-top: 0%;
 
     overflow: hidden;
 
-    animation: skymove 30s linear infinite;
+    animation: skymove 19s infinite linear;
+
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
 }
 
 
