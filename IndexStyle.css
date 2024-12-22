@@ -113,8 +113,8 @@ to {
     width: min(18vh + 18vw, 550px);
     height: min(80%, 550px);
     */
-    width: max(calc(18vh + 18vw));
-    height: max(calc(18vh + 18vw));
+    width: calc(18vh + 18vw);
+    height: calc(18vh + 18vw);
     
     aspect-ratio : 1 / 1;
     display: flex;
@@ -122,19 +122,32 @@ to {
     justify-content: center;
     position: absolute;
 
+    z-index: 5;
+
     left:50%;
+    margin-left: calc(-1 * (calc(18vh + 18vw)/2));
+    top:48%;
+    margin-top: calc(-1 * (calc(18vh + 18vw)/2));
+
+
+    /*
+        left:50%;
     margin-left: calc(-1 * (max(calc(18vh + 18vw))/2));
     top:48%;
     margin-top: calc(-1 * (max(calc(18vh + 18vw))/2));
+    */
 
-    /*
+
+/*
     border-width: calc(.3vw + .3vh);
     border-style: solid;
     border-color: black;
     background-position:center;
     border-radius: 20px;
-    */  
+    */
+    
 }
+
 
 
 .sunbackground1{
@@ -144,6 +157,7 @@ to {
     width: max(calc(105vh + 105vw), 900px);
     z-index: -2;
 
+    object-fit: cover;
     overflow: hidden;
 
     animation: rotation 30s linear infinite;
@@ -154,9 +168,12 @@ to {
 
     filter: blur(.6px);
 
-    -webkit-user-select: none; /* Safari */
-    -ms-user-select: none; /* IE 10 and IE 11 */
-    user-select: none; /* Standard syntax */
+    user-drag: none;
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
 }
 
 .sunbackground2{
@@ -174,9 +191,12 @@ to {
 
     filter: blur(.6px);
 
-    -webkit-user-select: none; /* Safari */
-    -ms-user-select: none; /* IE 10 and IE 11 */
-    user-select: none; /* Standard syntax */
+    user-drag: none;
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
 }
 
 
@@ -196,6 +216,16 @@ to {
         top: auto;
         bottom: 0;
     }
+}
+
+.bgroverlay{
+    position: absolute;
+    align-self: center;
+    width: 100%;
+    height: 100%;
+    z-index: -3;
+
+    overflow: hidden;
 }
 
 .overlaybackground{
