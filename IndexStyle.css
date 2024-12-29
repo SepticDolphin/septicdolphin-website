@@ -108,6 +108,9 @@ to {
 }
 
 
+
+
+
 .middleboxsepticdolphin{
     /*
     width: min(18vh + 18vw, 550px);
@@ -124,9 +127,9 @@ to {
 
     z-index: 5;
 
-    left:50%;
+    left:calc(50%);
     margin-left: calc(-1 * (calc(18vh + 18vw)/2));
-    top:48%;
+    top:calc(48%);
     margin-top: calc(-1 * (calc(18vh + 18vw)/2));
 
 
@@ -135,21 +138,20 @@ to {
     margin-left: calc(-1 * (max(calc(18vh + 18vw))/2));
     top:48%;
     margin-top: calc(-1 * (max(calc(18vh + 18vw))/2));
-    */
+    
 
 
-/*
+
     border-width: calc(.3vw + .3vh);
     border-style: solid;
     border-color: black;
     background-position:center;
     border-radius: 20px;
-    */
     
+    */
 }
 
-
-
+/*
 .sunbackground1{
     display: flex;
     position: absolute;
@@ -175,13 +177,42 @@ to {
     -webkit-user-select: none;
     -ms-user-select: none;
 }
+    */
+
+
+.sunbackground1{
+    display: flex;
+    position: absolute;
+    align-self: center;
+    width: calc(105vh + 105vw);
+    z-index: -2;
+
+    object-fit: cover;
+    overflow: hidden;
+
+    animation: rotation 30s linear infinite;
+
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+
+    filter: blur(.6px);
+
+    user-drag: none;
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
 
 .sunbackground2{
     display: flex;
     position: absolute;
     align-self: center;
-    width: max(calc(70vh + 70vw), 600px);
+    width: calc(70vh + 70vw);
     z-index: -2;
+    
 
     overflow: hidden;
 
@@ -265,8 +296,9 @@ to {
 
 body {
     background-image: url(BGR2.png);
-    background-size: 150vw auto;
+    background-size: calc(150vw) auto;
     background-repeat: repeat;
+
     
     margin: 0;
 
@@ -278,6 +310,8 @@ body {
     -ms-user-select: none; /* IE 10 and IE 11 */
     user-select: none; /* Standard syntax */
 }
+
+
 
 
 a:hover, a:focus {
