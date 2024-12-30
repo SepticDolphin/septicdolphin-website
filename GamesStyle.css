@@ -139,7 +139,7 @@ to {
 
 
     margin: 1%;
-    border-width: 0px;
+    border-width: 1px;
     border-style: solid;
     border-color: rgb(0, 0, 0);
 
@@ -158,21 +158,21 @@ to {
     width: 100%;  
     height: auto;
     margin-top: calc(-1vw - 1vw);
-    border-width: 0px;
+    border-width: 1px;
     border-style: solid;
     border-color: rgb(0, 0, 0);
 }
 
 
 .gameimage {
-    width: 100%;
 
+    max-width: 100%;
 
     align-items: center;
     justify-content: center;
 
 
-    border-width: 0px;
+    border-width: 1px;
     border-style: solid;
     border-color: rgb(0, 0, 0);
 }
@@ -183,6 +183,8 @@ to {
     .games {
         flex-direction: column; 
         height: 80%;
+        max-width: 100%;
+
 
         margin-top: -5%;
     }
@@ -190,6 +192,8 @@ to {
     .gameimage {
         height: 100%;
         width: auto;
+
+        margin: auto;
     }
 
     .gamescolumn {
