@@ -14,12 +14,37 @@
 
 
 
-@keyframes rotation {
+@-webkit-keyframes rotation {
 from {
-    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
     }
 to {
-    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+    }
+}
+
+
+
+@keyframes rotation {
+from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+    }
+to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+    }
+}
+
+
+@-webkit-keyframes skymove {
+    0% {
+        background-position-x: 0;
+    }
+    100% {
+        background-position-x: -150vw;
     }
 }
 
@@ -54,14 +79,21 @@ to {
 }
 
 .icons {
-    image-rendering: pixelated; 
+    -ms-interpolation-mode: nearest-neighbor;
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: -moz-crisp-edges;
+        image-rendering: -o-pixelated;
+        image-rendering: pixelated; 
     width: calc(10vh + 10vw);
     height: calc(2.5vh + 2.5vw);
-    align-self: center;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
     margin-bottom: calc(0.25vh + 0.25vw);
     margin-top: calc(0.5vh + 0.5vw);
     padding: 0;
-    object-fit: contain;
+    -o-object-fit: contain;
+       object-fit: contain;
 
  /* 
     border-width: 1px;
@@ -79,7 +111,9 @@ to {
     height: calc(2vh + 2vw);
     padding: calc(.25vh + .25vw);
 
-    filter: blur(.6px) brightness(0);
+    -webkit-filter: blur(.6px) brightness(0);
+
+            filter: blur(.6px) brightness(0);
 
     /*
     border-width: 1px;
@@ -93,11 +127,13 @@ to {
     width: calc(2.5vh + 2.5vw);   
     height: calc(2.5vh + 2.5vw);
     padding: 0;
-    filter: blur(.6px) brightness(0);
+    -webkit-filter: blur(.6px) brightness(0);
+            filter: blur(.6px) brightness(0);
 }
 
 .iconcolumn:active {
-    filter: blur(.6px) brightness(100);
+    -webkit-filter: blur(.6px) brightness(100);
+            filter: blur(.6px) brightness(100);
 }
 
 
@@ -120,9 +156,16 @@ to {
     height: calc(18vh + 18vw);
     
     aspect-ratio : 1 / 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     position: absolute;
 
     z-index: 5;
@@ -181,22 +224,38 @@ to {
 
 
 .sunbackground1{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     position: absolute;
-    align-self: center;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
     width: calc(105vh + 105vw);
     z-index: -2;
 
-    object-fit: cover;
+    -o-object-fit: cover;
+
+       object-fit: cover;
     overflow: hidden;
 
-    animation: rotation 30s linear infinite;
+    -webkit-animation: rotation 30s linear infinite;
 
-    image-rendering: pixelated;
+            animation: rotation 30s linear infinite;
+
+    -ms-interpolation-mode: nearest-neighbor;
+
+        image-rendering: -webkit-optimize-contrast;
+
+        image-rendering: -o-pixelated;
+
+        image-rendering: pixelated;
     image-rendering: -moz-crisp-edges;
     image-rendering: crisp-edges;
 
-    filter: blur(.6px);
+    -webkit-filter: blur(.6px);
+
+            filter: blur(.6px);
 
     user-drag: none;
     -webkit-user-drag: none;
@@ -207,20 +266,32 @@ to {
 }
 
 .sunbackground2{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     position: absolute;
-    align-self: center;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
     width: calc(70vh + 70vw);
     z-index: -2;
     
 
     overflow: hidden;
 
-    image-rendering: pixelated;
+    -ms-interpolation-mode: nearest-neighbor;
+
+        image-rendering: -webkit-optimize-contrast;
+
+        image-rendering: -o-pixelated;
+
+        image-rendering: pixelated;
     image-rendering: -moz-crisp-edges;
     image-rendering: crisp-edges;
 
-    filter: blur(.6px);
+    -webkit-filter: blur(.6px);
+
+            filter: blur(.6px);
 
     user-drag: none;
     -webkit-user-drag: none;
@@ -233,7 +304,9 @@ to {
 
 .mountainbackground{
     position: absolute;
-    align-self: top;
+    -ms-flex-item-align: top;
+        -ms-grid-row-align: top;
+        align-self: top;
     top: 60vh;
     width: 100%;
     height: auto;
@@ -251,17 +324,9 @@ to {
 
 .bgroverlay{
     position: absolute;
-    align-self: center;
-    width: 100%;
-    height: 100%;
-    z-index: -4;
-
-    overflow: hidden;
-}
-
-.overlaybackground{
-    position: absolute;
-    align-self: center;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
     width: 100%;
     height: 100%;
     z-index: -3;
@@ -269,18 +334,58 @@ to {
     overflow: hidden;
 }
 
+.overlaybackground{
+    position: absolute;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    width: 100%;
+    height: 100%;
+    z-index: -4;
+
+    overflow: hidden;
+}
+
 .middleboxgnomes{
     width: 50%;
     background-color: rgb(0, 0, 0);
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     position: absolute;
     left:50%;
     margin-left:-25%;
     border-width: 20px;
     border-style: solid;
-    border-image: 
+    -o-border-image: 
+    -o-linear-gradient(
+      top, 
+      #ff8800, 
+      #ff0000, 
+      #ff00ff, 
+      #0000ff, 
+      #00ff00, 
+      #ffff00
+    ) 1 100%;
+       border-image: 
+    -webkit-gradient(
+      linear, 
+      left top, left bottom, 
+      from(#ff8800), 
+      color-stop(#ff0000), 
+      color-stop(#ff00ff), 
+      color-stop(#0000ff), 
+      color-stop(#00ff00), 
+      to(#ffff00)
+    ) 1 100%;
+       border-image: 
     linear-gradient(
       to bottom, 
       #ff8800, 
@@ -304,11 +409,14 @@ body {
 
     overflow: hidden;
 
-    animation: skymove 19s infinite linear;
+    -webkit-animation: skymove 19s infinite linear;
+
+            animation: skymove 19s infinite linear;
 
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10 and IE 11 */
-    user-select: none; /* Standard syntax */
+    -moz-user-select: none;
+         user-select: none; /* Standard syntax */
 }
 
 
@@ -376,9 +484,15 @@ h3 {
     font-size: calc(1vh + 1vw);
     height: calc(1.75vh + 1.75vw);
     width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center; 
-    align-items: center;     
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center; 
+    -webkit-box-align: center; 
+        -ms-flex-align: center; 
+            align-items: center;     
     color: rgb(0, 0, 0);
     font-family: 'RS2', 'Arial Narrow', Arial, sans-serif;
     margin: 0; 
